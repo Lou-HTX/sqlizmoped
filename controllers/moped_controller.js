@@ -25,11 +25,11 @@ var build = require('../models')['moped'];
 //     });
 // }
 
-router.get('/', function(req, res) {
-    res.redirect('/moped')
-});
+// router.get('/', function(req, res) {
+//     res.redirect('/moped')
+// });
 
-router.get('/moped', function(req, res) {
+router.get('/', function(req, res) {
     db.Build.findAll({}).then(function(data) {
         var hbsObject = { burgers: data }
         console.log(hbsObject);
