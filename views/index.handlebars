@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 center-align">
+      <h1 class="center-align text-warning">Moped Builder</h1>
+      <img class="center-align" id="logo" src="/assets/img/moped.jpg"></img>
+
+      <form method="POST" action="/" class="button-size text-center">
+        <textarea type="text" name="moped_part" data-error="wrong" data-success="right" required></textarea>
+        <br>
+        <button class="waves-effect waves-light btn" type="submit">add to build</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col s12 m6">
+      <ul class="collection with-header">
+        <li class="collection-header center-align">
+          <h5>Parts</h5></li>
+         {{#each burgers}} {{#unless this.devoured}}
+        <li class="collection-item avatar">
+          <img src="/assets/img/parts1.jpg" alt="" class="square"> 
+          <br>
+          <span class="title">
+            {{this.id}}. {{this.moped_part}}</span> 
+          <form action="/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="id" value="{{this.devoured}}">
+            <br>
+            <button class="waves-effect waves-light btn"  type="submit">install</button> 
+          </form>
+        </li>
+        {{/unless}} {{/each}}
+      </ul>
+    </div>
+
+    <div class="col s12 m6">
+      <ul class="collection with-header">
+        <li class="collection-header center-align">
+          <h5>Installed</h5></li>
+        {{#each burgers}} {{#if this.devoured}}
+        <li class="collection-item avatar">
+          <img src="/assets/img/installed.jpg" alt="" class="square">
+          <br>
+          <span class="title grey-text text-darken-1">
+           
+              {{this.id}}. {{this.moped_part}}
+          
+          </span> {{/if}} {{/each}}
+      </ul>
+    </div>
+  </div>
