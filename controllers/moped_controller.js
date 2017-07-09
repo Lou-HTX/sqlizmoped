@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var db = require("../models");
-var build = require('../models')['moped'];
+var build = require('../models');
 // var burger = require('../models')['burgers'];
 
 // module.exports = function(app) {
@@ -31,7 +31,7 @@ var build = require('../models')['moped'];
 
 router.get('/', function(req, res) {
     db.Build.findAll({}).then(function(data) {
-        var hbsObject = { burgers: data }
+        var hbsObject = { burgers: data };
         console.log(hbsObject);
         res.render('index', hbsObject);
     });
@@ -69,17 +69,17 @@ router.post('/', function(req, res) {
 //     });
 // });
 
-router.put("/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
+// router.put("/:id", function(req, res) {
+//     var condition = "id = " + req.params.id;
 
-    console.log("condition", condition);
+//     console.log("condition", condition);
 
-    Build.update({
-        installed: req.body.installed
-    }, condition, function() {
-        res.redirect("/");
-    });
-});
+//     Build.update({
+//         installed: req.body.installed
+//     }, condition, function() {
+//         res.redirect("/");
+//     });
+// });
 
 // router.put('/:id', function(req, res) {
 //     db.Build.update({
