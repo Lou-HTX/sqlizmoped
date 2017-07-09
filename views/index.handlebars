@@ -17,14 +17,15 @@
       <ul class="collection with-header">
         <li class="collection-header center-align">
           <h5>Parts</h5></li>
-         {{#each burgers}} {{#unless this.devoured}}
+         {{#each burgers}} {{#unless this.installed}}
         <li class="collection-item avatar">
           <img src="/assets/img/parts1.jpg" alt="" class="square"> 
           <br>
           <span class="title">
             {{this.id}}. {{this.moped_part}}</span> 
+          {{!--<form method="PUT" action="/id">--}}
           <form action="/{{this.id}}?_method=PUT" method="POST">
-            <input type="hidden" name="id" value="{{this.devoured}}">
+            <input type="hidden" name="installed" value="true">
             <br>
             <button class="waves-effect waves-light btn"  type="submit">install</button> 
           </form>
@@ -37,7 +38,7 @@
       <ul class="collection with-header">
         <li class="collection-header center-align">
           <h5>Installed</h5></li>
-        {{#each burgers}} {{#if this.devoured}}
+        {{#each burgers}} {{#if this.installed}}
         <li class="collection-item avatar">
           <img src="/assets/img/installed.jpg" alt="" class="square">
           <br>

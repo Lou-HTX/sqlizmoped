@@ -69,15 +69,28 @@ router.post('/', function(req, res) {
 //     });
 // });
 
-router.put('/:id', function(req, res) {
-    db.Build.update(
-        req.body, {
-            where: {
-                id: req.params.id
-            }
-        }).then(function(data) {
-        res.redirect('/');
+router.put("/:id", function(req, res) {
+    var condition = "id = " + req.params.id;
+
+    console.log("condition", condition);
+
+    Build.update({
+        installed: req.body.installed
+    }, condition, function() {
+        res.redirect("/");
     });
 });
+
+// router.put('/:id', function(req, res) {
+//     db.Build.update({
+//         installed: req.body.installed
+//     }, {
+//         where: {
+//             id: req.body.id
+//         }
+//     }).then(function(data) {
+//         res.redirect('/');
+//     });
+// });
 
 module.exports = router;
