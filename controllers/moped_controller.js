@@ -33,7 +33,7 @@ router.get('/', function(req, res) {
     db.Build.findAll({}).then(function(data) {
         var hbsObject = { burgers: data };
         console.log(hbsObject);
-        res.render('index', hbsObject);
+        res.render('main', hbsObject);
     });
 });
 
