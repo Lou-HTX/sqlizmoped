@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-// var PORT = process.env.PORT || 8080;
+var port = process.env.PORT || 3000;
 
 var app = express();
 
@@ -44,7 +44,7 @@ db.sequelize.sync({ force: false }).then(function() {
 // ====================================================================
 //starting express
 // ====================================================================
-app.listen(process.env.PORT || 3000, function(err) {
+app.listen(port, function(err) {
     console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
     if (!err)
         console.log("Site is live");
