@@ -31,7 +31,7 @@ app.set("view engine", "handlebars");
 // ====================================================================
 //Routes
 // ====================================================================
-var routes = require("./controllers/moped_Controller.js");
+var routes = require("./controllers/moped_controller.js");
 app.use("/", routes);
 // ====================================================================
 //Sync Database
