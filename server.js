@@ -37,17 +37,17 @@ app.use("/", routes);
 //Sync Database
 // ====================================================================
 db.sequelize.sync({ force: false }).then(function() {
-    console.log('Nice! Database looks fine')
+    console.log('Nice! Database looks fine');
 }).catch(function(err) {
     console.log(err, "Something went wrong with the Database Update!")
 });
 // ====================================================================
 //starting express
 // ====================================================================
-app.listen(process.env.PORT || 8080, function(err) {
+app.listen(process.env.PORT || 3000, function(err) {
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
     if (!err)
         console.log("Site is live");
     else
-        console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-    console.log(err);
+        console.log(err);
 });
