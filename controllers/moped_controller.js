@@ -3,13 +3,13 @@ var router = express.Router();
 var db = require("../models");
 var build = require('../models')['moped'];
 
-router.get('/', function(req, res) {
-    res.redirect('/moped')
+router.get('/index', function(req, res) {
+    res.redirect('/index');
 });
 
-router.get('/moped', function(req, res) {
+router.get('/', function(req, res) {
     db.Build.findAll({}).then(function(data) {
-        var hbsObject = { burgers: data }
+        var hbsObject = { burgers: data };
         console.log(hbsObject);
         res.render('index', hbsObject);
     });
@@ -22,7 +22,7 @@ router.post('/', function(req, res) {
     }, {
         installed: req.body.installed
     }).then(function(data) {
-        res.redirect('/')
+        res.redirect('/');
     });
 });
 

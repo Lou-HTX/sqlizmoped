@@ -31,8 +31,6 @@ app.set("view engine", "handlebars");
 // ====================================================================
 //Routes
 // ====================================================================
-// require("./routes/html-routes.js")(app);
-// require("./routes/api-routes.js")(app);
 var routes = require("./controllers/moped_Controller.js");
 app.use("/", routes);
 // ====================================================================
@@ -49,5 +47,5 @@ db.sequelize.sync({ force: false }).then(function() {
 app.listen(PORT, function(err) {
     if (!err)
         console.log("Site is live");
-    else console.log(err)
+    else console.log(err);
 });
