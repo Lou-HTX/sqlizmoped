@@ -9,14 +9,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Lou-HTX/sqlizmoped.git"
+        "url": "git+https://github.com/Lou-HTX/sequelizedBurger.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/Lou-HTX/sqlizmoped/issues"
+        "url": "https://github.com/Lou-HTX/burger_logger/issues"
     },
-    "homepage": "https://github.com/Lou-HTX/sqlizmoped#readme",
+    "homepage": "https://github.com/Lou-HTX/burger_logger#readme",
     "dependencies": {
         "body-parser": "^1.17.2",
         "express": "^4.15.3",

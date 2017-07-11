@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 var app = express();
 
@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 // ====================================================================
 //Override with POST having ?_method=DELETE
 // ====================================================================
-app.use(methodOverride('__method'));
+app.use(methodOverride('_method'));
 // ====================================================================
 //for handlebars
 // ====================================================================
@@ -39,9 +39,9 @@ app.use("/", routes);
 //Sync Database
 // ====================================================================
 db.sequelize.sync({ force: false }).then(function() {
-    console.log('Nice! Database looks fine');
+    console.log('Nice! Database looks fine')
 }).catch(function(err) {
-    console.log(err, "Something went wrong with the Database Update!");
+    console.log(err, "Something went wrong with the Database Update!")
 });
 // ====================================================================
 //starting express
@@ -49,5 +49,5 @@ db.sequelize.sync({ force: false }).then(function() {
 app.listen(PORT, function(err) {
     if (!err)
         console.log("Site is live");
-    else console.log(err);
+    else console.log(err)
 });

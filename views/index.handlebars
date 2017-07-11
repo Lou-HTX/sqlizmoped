@@ -23,9 +23,8 @@
           <br>
           <span class="title">
             {{this.id}}. {{this.moped_part}}</span> 
-          {{!--<form method="PUT" action="/id">--}}
-          <form action="/{{this.id}}?_method=PUT" method="POST">
-            <input type="hidden" name="installed" value="true">
+          <form action="/build/update?_method=PUT" method="POST">
+            <input type="hidden" name="id" value="{{this.id}}">
             <br>
             <button class="waves-effect waves-light btn"  type="submit">install</button> 
           </form>
